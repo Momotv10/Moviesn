@@ -13,4 +13,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run script
-        run: php up.php
+        run: php main/up.php
