@@ -1,16 +1,15 @@
-name: Schedule
+name: HTTP GET Workflow
 
 on:
   schedule:
-    - cron: '* * * * *' # تحديد الجدولة الزمنية هنا (في هذا المثال، سيتم تشغيل الرابط كل دقيقة)
+    - cron: '* * * * *'
 
 jobs:
-  build:
+  http_get:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Run script
-        run: php up.php
+      - name: HTTP GET
+        uses: michaeldyrynda/http-get-action@v2
+        with:
+          url: 'http://accmoh.wuaze.com/upmm.php'
