@@ -1,0 +1,13 @@
+name: HTTP GET Workflow
+
+on:
+  schedule:
+    - cron: '* * * * *'
+
+jobs:
+  http_get:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: HTTP GET
+        run: curl -s http://accmoh.wuaze.com/upmm.php
